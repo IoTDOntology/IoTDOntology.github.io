@@ -1,18 +1,18 @@
-@prefix : <http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#> .
+@prefix : <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#> .
+@base <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#> .
 
-<http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD> rdf:type owl:Ontology ;
+<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> rdf:type owl:Ontology ;
                                                                owl:imports <http://elite.polito.it/ontologies/eupont.owl#> ,
                                                                            <https://saref.etsi.org/core/> ;
                                                                <http://purl.org/dc/terms/description> "IoT-D reprensents IoT systems context data that allows inference of dependencies between IoT systems." ;
                                                                <http://purl.org/dc/terms/title> "IoT dependencies ontology" ;
-                                                               <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD" ;
-                                                               owl:versionIRI "http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD/0.0.4" ;
+                                                               <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD" ;
+                                                               owl:versionIRI "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD/0.0.4" ;
                                                                owl:versionInfo "0.0.4" .
 
 #################################################################
@@ -71,129 +71,129 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                                       "flows to"@en .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#allowsAction
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction
 :allowsAction rdf:type owl:ObjectProperty ;
               rdfs:domain :Service ;
               rdfs:range :Action ;
               rdfs:comment "A relationship between a service and an action, a service call allow action execution." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#consumes
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes
 :consumes rdf:type owl:ObjectProperty ;
           rdfs:domain <https://saref.etsi.org/core/Device> ;
           rdfs:range <https://saref.etsi.org/core/Service> ;
           rdfs:comment "A relationship between a device and a service." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#controlsProperty
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty
 :controlsProperty rdf:type owl:ObjectProperty ;
                   owl:equivalentProperty <https://saref.etsi.org/core/controlsProperty> ;
                   rdfs:domain :Actuator ;
                   rdfs:range :Property .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsFrom
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom
 :flowsFrom rdf:type owl:ObjectProperty ;
            rdfs:domain :DataFlow ;
            rdfs:range :Action .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsTo
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo
 :flowsTo rdf:type owl:ObjectProperty ;
          rdfs:domain :DataFlow ;
          rdfs:range :Action .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasAction
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction
 :hasAction rdf:type owl:ObjectProperty ;
            rdfs:domain :Rule ;
            rdfs:range :Action .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasApplicationAction
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction
 :hasApplicationAction rdf:type owl:ObjectProperty ;
                       rdfs:domain :Application ;
                       rdfs:range <http://elite.polito.it/ontologies/eupont.owl#Action> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasChildTrigger
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger
 :hasChildTrigger rdf:type owl:ObjectProperty ;
                  rdfs:domain :ComplexTrigger ;
                  rdfs:range :Trigger .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasConnectivityDependency
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency
 :hasConnectivityDependency rdf:type owl:ObjectProperty ;
                            rdfs:domain <https://saref.etsi.org/core/Device> ;
                            rdfs:range <https://saref.etsi.org/core/Device> ;
                            rdfs:comment "Denotes connectivity dependency relationship between two devices." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo
 :hasEnvironmentDependencyTo rdf:type owl:ObjectProperty ;
                             rdfs:domain <https://saref.etsi.org/core/Device> ;
                             rdfs:range <https://saref.etsi.org/core/Device> ;
                             rdfs:comment "Denotes environment dependency relationship between two devices." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo
 :hasImplicitServiceDependencyTo rdf:type owl:ObjectProperty ;
                                 rdfs:domain :Device ;
                                 rdfs:range :Device ;
                                 rdfs:comment "Denotes implicit service dependency between two IoT devices." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasProperty
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty
 :hasProperty rdf:type owl:ObjectProperty ;
              rdfs:domain :FeatureOfInterest ;
              rdfs:range :Property .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasRule
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule
 :hasRule rdf:type owl:ObjectProperty ;
          rdfs:domain :Application ;
          rdfs:range <http://elite.polito.it/ontologies/eupont.owl#Rule> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceDependencyTo
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo
 :hasServiceDependencyTo rdf:type owl:ObjectProperty ;
                         rdfs:domain <https://saref.etsi.org/core/Device> ;
                         rdfs:range <https://saref.etsi.org/core/Device> ;
                         rdfs:comment "Denotes direct service dependency relationship between two devices." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasState
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState
 :hasState rdf:type owl:ObjectProperty ;
           rdfs:domain :Device ;
           rdfs:range :State .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasStateDependencyTo
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo
 :hasStateDependencyTo rdf:type owl:ObjectProperty ;
                       rdfs:domain <https://saref.etsi.org/core/Device> ;
                       rdfs:range <https://saref.etsi.org/core/Device> ;
                       rdfs:comment "Denotes state dependency relationship between two devices." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasTrigger
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger
 :hasTrigger rdf:type owl:ObjectProperty ;
             rdfs:domain :Rule ;
             rdfs:range :Trigger .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#measuresProperty
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty
 :measuresProperty rdf:type owl:ObjectProperty ;
                   rdfs:domain :Sensor ;
                   rdfs:range :Property .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#offers
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers
 :offers rdf:type owl:ObjectProperty ;
         rdfs:domain :Device ;
         rdfs:range :Service .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#relatedTo
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo
 :relatedTo rdf:type owl:ObjectProperty ;
            rdfs:domain :Trigger ;
            rdfs:range <https://saref.etsi.org/core/State> ;
@@ -208,33 +208,33 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceName
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceName
 :hasDeviceName rdf:type owl:DatatypeProperty ;
                rdfs:domain <https://saref.etsi.org/core/Device> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceTypeName
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceTypeName
 :hasDeviceTypeName rdf:type owl:DatatypeProperty ;
                    rdfs:domain <https://saref.etsi.org/core/Device> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasIPAddress
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasIPAddress
 :hasIPAddress rdf:type owl:DatatypeProperty ;
               rdfs:domain <https://saref.etsi.org/core/Device> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasMacAddress
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress
 :hasMacAddress rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
                rdfs:domain <https://saref.etsi.org/core/Device> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasManufacturerName
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasManufacturerName
 :hasManufacturerName rdf:type owl:DatatypeProperty ;
                      rdfs:domain <https://saref.etsi.org/core/Device> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceName
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceName
 :hasServiceName rdf:type owl:DatatypeProperty ;
                 rdfs:domain <https://saref.etsi.org/core/Service> .
 
@@ -262,130 +262,130 @@ owl:versionIRI rdf:type owl:AnnotationProperty .
                                             rdfs:label "Data Flow"@en .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action
 :Action rdf:type owl:Class ;
         rdfs:subClassOf <http://elite.polito.it/ontologies/eupont.owl#Action> ;
         rdfs:comment "An action to perform by calling a service of an IoT device." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator
 :Actuator rdf:type owl:Class ;
           owl:equivalentClass <https://saref.etsi.org/core/Actuator> ;
           rdfs:subClassOf :Device ,
                           :IoTDevice .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application
 :Application rdf:type owl:Class ;
              rdfs:comment "An IoT application that compose IoT devices services to create added value/complex services, it can be a trigger-action plateform." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Broker
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker
 :Broker rdf:type owl:Class ;
         rdfs:subClassOf :Application ;
         rdfs:comment "broker that connect equipments." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ComplexTrigger
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger
 :ComplexTrigger rdf:type owl:Class ;
                 rdfs:subClassOf :Trigger .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityDevice
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice
 :ConnectivityDevice rdf:type owl:Class ;
                     rdfs:subClassOf :Device ;
                     rdfs:comment "A device that connectes home devices to the internet like: gateway, wifiRepeater, hub." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityService
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService
 :ConnectivityService rdf:type owl:Class ;
                      rdfs:subClassOf <https://saref.etsi.org/core/Service> ;
                      rdfs:comment "A service offred by a connectivityDevice." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#DataFlow
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow
 :DataFlow rdf:type owl:Class ;
           rdfs:subClassOf <http://www.data-knowledge.org/dk/DataFlow> ;
           rdfs:comment "Indicates the actual connection and data exchange between actions in one application." ;
           rdfs:label "Data Flow" .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device
 :Device rdf:type owl:Class ;
         owl:equivalentClass <https://saref.etsi.org/core/Device> ;
         rdfs:comment "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function." ;
         rdfs:label "Device" .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#FeatureOfInterest
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest
 :FeatureOfInterest rdf:type owl:Class ;
                    owl:equivalentClass <https://saref.etsi.org/core/FeatureOfInterest> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#IoTDevice
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice
 :IoTDevice rdf:type owl:Class ;
            rdfs:subClassOf :Device ;
            rdfs:comment "A device that is connected to the internet to share data it can be ether a sensor/actuator/processor or compositition." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Processor
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor
 :Processor rdf:type owl:Class ;
            rdfs:subClassOf :Device ;
            rdfs:comment "A device that has the capability to perform computation operations on data." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Property
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property
 :Property rdf:type owl:Class ;
           owl:equivalentClass <https://saref.etsi.org/core/Property> ;
           rdfs:comment "A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature" .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Rule
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule
 :Rule rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor
 :Sensor rdf:type owl:Class ;
         owl:equivalentClass <https://saref.etsi.org/core/Sensor> ;
         rdfs:subClassOf :Device ,
                         :IoTDevice .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Service
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service
 :Service rdf:type owl:Class ;
          owl:equivalentClass <https://saref.etsi.org/core/Service> .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Smokesensor
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor
 :Smokesensor rdf:type owl:Class ;
              owl:equivalentClass <https://saref.etsi.org/core/SmokeSensor> ;
              rdfs:subClassOf :Sensor .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#State
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State
 :State rdf:type owl:Class ;
        owl:equivalentClass <https://saref.etsi.org/core/State> ;
        rdfs:comment "The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Switch
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Switch
 :Switch rdf:type owl:Class ;
         rdfs:subClassOf :Actuator .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Temperaturesensor
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor
 :Temperaturesensor rdf:type owl:Class ;
                    owl:equivalentClass <https://saref.etsi.org/core/TemperatureSensor> ;
                    rdfs:subClassOf :Sensor .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger
 :Trigger rdf:type owl:Class ;
          rdfs:subClassOf <http://elite.polito.it/ontologies/eupont.owl#Trigger> ;
          rdfs:comment "An event to react to. It is launched when the state of an IoT device changes." .
 
 
-###  http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#triggerActionPlateform
+###  http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform
 :triggerActionPlateform rdf:type owl:Class ;
                         rdfs:subClassOf :Application ;
                         rdfs:comment "a kind of IoT application that is composed of rules created by end user." .
