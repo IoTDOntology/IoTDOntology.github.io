@@ -1,2131 +1,443 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>IoT dependencies ontology</title>
+@prefix : <https://w3id.org/iotd#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix ns1: <http://creativecommons.org/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/iotd> .
+
+<https://w3id.org/iotd> rdf:type owl:Ontology ;
+                                                               owl:imports <http://elite.polito.it/ontologies/eupont.owl#> ,
+                                                                           <https://saref.etsi.org/core/> ;
+                                                               terms:description "IoT-D reprensents IoT systems context data that allows inference of dependencies between IoT systems." ;
+                                                               terms:title "IoT dependencies ontology" ;
+                                                               vann:preferredNamespaceUri "https://w3id.org/iotd" ;
+                                                               owl:versionIRI "https://w3id.org/iotd/0.0.4" ;
+                                                               owl:versionInfo "0.0.4" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
 
 
-<!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD","name":"IoT dependencies ontology", "headline":"IoT-D reprensents IoT systems context data that allows inference of dependencies between IoT systems.", "datePublished":"04/04/2022", "version":"0.0.4", "author":[{"@type":"Person","name":"Amal GUITTOUM"}], "contributor":[{"@type":"Person","name":"François AISSAOUI"},{"@type":"Person","name":"Sébastien BOLLE"},{"@type":"Person","name":"Fabienne Boyer","url":"https://lig-membres.imag.fr/boyer/html/index.html"},{"@type":"Person","name":"Noel De Palma","url":"https://lig-membres.imag.fr/depalma/"}]}</script>
-
-<script src="resources/jquery.js"></script> 
-<script src="resources/marked.min.js"></script> 
-    <script> 
-function loadHash() {
-  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
-	var hash = location.hash;
-	if($(hash).offset()!=null){
-	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
-}
-	loadTOC();
-}
-function loadTOC(){
-	//process toc dynamically
-	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
-	  jQuery(".list").each(function(){
-		if(jQuery(this).is('h2')){
-			if(j>0){
-				t+='</ul>';
-				j=0;
-			}
-			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
-			i++;
-		}
-		if(jQuery(this).is('h3')){
-			if(j==0){
-				t+='<ul>';
-			}
-			j++;
-			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
-		}
-	  });
-	  t+='</ul>';
-	  $("#toc").html(t); 
-}
-$(function(){
-    loadHash();
-}); $.fn.ignore = function(sel){
-        return this.clone().find(sel||">*").remove().end();
- }; 
-   </script> 
-  </head> 
-
-<body>
-<div class="container">
-<div class="head">
-<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>IoT-D: IoT dependencies ontology</h1>
-<h2>Release 04/04/2022</h2>
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
 
 
-<dl>
-<dt>This version:</dt>
-<dd><a href="0.0.4">0.0.4</a></dd>
-<dt>Latest version:</dt>
-<dd><a href="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD">http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD</a></dd>
-<dt>Revision:</dt>
-<dd>0.0.4</dd>
-<dt>Authors:</dt>
-<dd>Amal GUITTOUM, <a href="https://www.orange.com/en"> Orange Innovation</a>, <a href="https://www.liglab.fr/en">LIG Lab</a>  <a href="mailto:amal.guittoum@orange.com">&#9993;</a></dd>
-
-<dt>Contributors:</dt>
-<dd>François AISSAOUI, <a href="https://www.orange.com/en"> Orange Innovation</a> <a href="mailto:francois.aissaoui@orange.com">&#9993;</a></dd><dd>Sébastien BOLLE, <a href="https://www.orange.com/en"> Orange Innovation</a><a href="mailto:sebastien.bolle@orange.com">&#9993;</a></dd><dd><a href="https://lig-membres.imag.fr/boyer/html/index.html">Fabienne Boyer</a>, <a href="https://www.liglab.fr/en">LIG Lab</a> <a href="mailto:Fabienne.Boyer@imag.fr">&#9993;</a></dd><dd><a href="https://lig-membres.imag.fr/depalma/">Noel De Palma</a>, <a href="https://www.liglab.fr/en">LIG Lab</a> <a href="mailto:noel.depalma@univ-grenoble-alpes.fr">&#9993;</a></dd>
-
-<dt>Imported Ontologies:</dt>
-<dd><a href="http://elite.polito.it/ontologies/eupont.owl">EuPont</a></dd><dd><a href="https://saref.etsi.org/core/">SAREF</a></dd><dd><a href="http://www.data-knowledge.org/dk/">DK</a></dd>
-
-<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
-</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd> IoT dependencies ontology. Revision: 0.0.4.</dd>
-</dl>
-
-<hr/>
-</div>
-<div class="status">
-<div>
-<span>Ontology Documentation</span>
-</div>
-</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-IoT-D ontology reprensents contextual data that allows inference of dependencies between IoT devices across heteregenous DM solutions managed by multiple actors.</span>
-</div>
-<div id="toc"></div> 
-
-<!--INTRODUCTION SECTION-->
-    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-IoT-D ontology describes IoT dependencies and their context that are distributed across heterogenous DM solutions. It allows the documentation and the characterization of IoT dependencies at diffrent levels at the device, the application, and the physical environment levels. It is designed to supports decision-making when addressing dependencies-related threats such as Cascading Failure.</span>
-<div id="namespacedeclarations">
-<h3 id="ns" class="list">Namespace declarations</h3>
-<div id="ns" align="center">
-<table>
-<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
-<tbody>
-<tr><td><b>IoTd</b></td><td>&lt;http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD&gt;</td></tr>
-<tr><td></td><td></td></tr>
-<tr><td><b>ns</b></td><td>&lt;http://www.w3.org/2003/06/sw-vocab-status/ns&gt;</td></tr>
-<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
-<tr><td><b>dk</b></td><td>&lt;http://www.data-knowledge.org/dk&gt;</td></tr>
-<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
-<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
-<tr><td><b>eupont</b></td><td>&lt;http://elite.polito.it/ontologies/eupont.owl&gt;</td></tr>
-<tr><td><b>ns1</b></td><td>&lt;http://creativecommons.org/ns&gt;</td></tr>
-<tr><td><b>core</b></td><td>&lt;https://saref.etsi.org/core&gt;</td></tr>
-<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
-<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
-<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
-<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
-<tr><td><b>wot</b></td><td>&lt;http://xmlns.com/wot/0.1&gt;</td></tr>
-<tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/0.1&gt;</td></tr>
-<tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1&gt;</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-  
-
-<!--OVERVIEW SECTION-->
-    <div id="overview"><h2 id="overv" class="list">IoT dependencies ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This ontology has the following classes and properties.</span>
-<h4>Classes</h4>
-<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
-   <li>
-      <a href="#Action"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">
-         <span>action</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Actuator"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator">
-         <span>actuator</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Application"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application">
-         <span>application</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Broker"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Broker">
-         <span>broker</span>
-      </a>
-   </li>
-   <li>
-      <a href="#ComplexTrigger"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ComplexTrigger">
-         <span>complex trigger</span>
-      </a>
-   </li>
-   <li>
-      <a href="#ConnectivityDevice"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityDevice">
-         <span>connectivity device</span>
-      </a>
-   </li>
-   <li>
-      <a href="#ConnectivityService"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityService">
-         <span>connectivity service</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://www.data-knowledge.org/dk/DataFlow" title="http://www.data-knowledge.org/dk/DataFlow">Data Flow</a>
-   </li>
-   <li>
-      <a href="#DataFlow"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#DataFlow">Data Flow</a>
-   </li>
-   <li>
-      <a href="#Device"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-   </li>
-   <li>
-      <a href="#FeatureOfInterest"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#FeatureOfInterest">
-         <span>feature of interest</span>
-      </a>
-   </li>
-   <li>
-      <a href="#IoTDevice"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#IoTDevice">
-         <span>io t device</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Processor"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Processor">
-         <span>processor</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Property"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Property">
-         <span>property</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://elite.polito.it/ontologies/eupont.owl#Rule"
-         title="http://elite.polito.it/ontologies/eupont.owl#Rule">
-         <span>rule</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Sensor"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor">
-         <span>sensor</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Service"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Service">
-         <span>service</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Smokesensor"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Smokesensor">
-         <span>smokesensor</span>
-      </a>
-   </li>
-   <li>
-      <a href="#State"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#State">
-         <span>state</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Switch"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Switch">
-         <span>switch</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Temperaturesensor"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Temperaturesensor">
-         <span>temperaturesensor</span>
-      </a>
-   </li>
-   <li>
-      <a href="#Trigger"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger">
-         <span>trigger</span>
-      </a>
-   </li>
-   <li>
-      <a href="#triggerActionPlateform"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#triggerActionPlateform">
-         <span>trigger action plateform</span>
-      </a>
-   </li>
-</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
-   <li>
-      <a href="#allowsAction"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#allowsAction">
-         <span>allows action</span>
-      </a>
-   </li>
-   <li>
-      <a href="#consumes"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#consumes">
-         <span>consumes</span>
-      </a>
-   </li>
-   <li>
-      <a href="#controlsProperty"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#controlsProperty">
-         <span>controls property</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://www.data-knowledge.org/dk/flowsFrom" title="http://www.data-knowledge.org/dk/flowsFrom">flows from</a>
-   </li>
-   <li>
-      <a href="#flowsFrom"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsFrom">
-         <span>flows from</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://www.data-knowledge.org/dk/flowsTo" title="http://www.data-knowledge.org/dk/flowsTo">flows to</a>
-   </li>
-   <li>
-      <a href="#flowsTo"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsTo">
-         <span>flows to</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasAction"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasAction">
-         <span>has action</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasApplicationAction"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasApplicationAction">
-         <span>has application action</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasChildTrigger"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasChildTrigger">
-         <span>has child trigger</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasConnectivityDependency"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasConnectivityDependency">
-         <span>has connectivity dependency</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasEnvironmentDependencyTo"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo">
-         <span>has environment dependency to</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasImplicitServiceDependencyTo"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo">
-         <span>has implicit service dependency to</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasProperty"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasProperty">
-         <span>has property</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasRule"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasRule">
-         <span>has rule</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasServiceDependencyTo"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceDependencyTo">
-         <span>has service dependency to</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasState"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasState">
-         <span>has state</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasStateDependencyTo"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasStateDependencyTo">
-         <span>has state dependency to</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasTrigger"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasTrigger">
-         <span>has trigger</span>
-      </a>
-   </li>
-   <li>
-      <a href="#measuresProperty"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#measuresProperty">
-         <span>measures property</span>
-      </a>
-   </li>
-   <li>
-      <a href="#offers"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#offers">
-         <span>offers</span>
-      </a>
-   </li>
-   <li>
-      <a href="#relatedTo"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#relatedTo">
-         <span>related to</span>
-      </a>
-   </li>
-</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
-   <li>
-      <a href="#hasDeviceName"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceName">
-         <span>has device name</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasDeviceTypeName"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceTypeName">
-         <span>has device type name</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasIPAddress"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasIPAddress">
-         <span>has i p address</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasMacAddress"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasMacAddress">
-         <span>has mac address</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasManufacturerName"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasManufacturerName">
-         <span>has manufacturer name</span>
-      </a>
-   </li>
-   <li>
-      <a href="#hasServiceName"
-         title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceName">
-         <span>has service name</span>
-      </a>
-   </li>
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
-</div>
-  
-
-<!--DESCRIPTION SECTION-->
-    <div id="description"><h2 id="desc" class="list">IoT dependencies ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-Conceptually, the IoT-D ontology includes three modules: 1) Device-Device Interaction module: describes the capabilities of IoT devices in terms of service provisioning and usage to model the context of direct dependencies. It is based on the enrichment of the SAREF ontology by describing the direct exchange of services between devices through the relation IoTD:consumes and specializing the saref:Service and saref:Device to account for connectivity devices and services, allowing inference of service and connectivity dependencies; 2) Device-Environment interaction module: represents, using the SAREF ontology, the interaction of devices within the physical environment through sensing and ac- tuation, enabling the inference of environment-based dependencies; 3) Device- Application interaction module: describes device interactions in IoT applications. Based on the EuPont ontology, an IoT application is represented using a set of IoTD:Rule and IoTD:Action that are executed by saref:Service. IoTD:Rule is in the form if (IoTD:Trigger ) then IoTD:Action. Triggers are related to a change in devices state saref:State. This trigger-action-based model allows representing state dependencies between devices i.e. when an IoT application acts on one device based on the state of another. Also, it allows the representation of implicit service dependencies in the form of data flows between IoTD:Action, using the class dk:DataFlow of the DK Ontology.</span>
-<figure>
-	<img src="modules.PNG"  width="900" 
-     height="500">
-	<figcaption class="list">IoT-D Modules</figcaption>
-</figure>
-</div>
-   
-
-<!--CROSSREF SECTION-->
-   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for IoT dependencies ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-This section provides details for each class and property defined by IoT dependencies ontology.
-<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
-   <h3 id="classes-headline" class="list">Classes</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#Action"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">
-            <span>action</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Actuator"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator">
-            <span>actuator</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Application"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application">
-            <span>application</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Broker"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Broker">
-            <span>broker</span>
-         </a>
-      </li>
-      <li>
-         <a href="#ComplexTrigger"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ComplexTrigger">
-            <span>complex trigger</span>
-         </a>
-      </li>
-      <li>
-         <a href="#ConnectivityDevice"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityDevice">
-            <span>connectivity device</span>
-         </a>
-      </li>
-      <li>
-         <a href="#ConnectivityService"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityService">
-            <span>connectivity service</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://www.data-knowledge.org/dk/DataFlow" title="http://www.data-knowledge.org/dk/DataFlow">Data Flow</a>
-      </li>
-      <li>
-         <a href="#DataFlow"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#DataFlow">Data Flow</a>
-      </li>
-      <li>
-         <a href="#Device"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-      </li>
-      <li>
-         <a href="#FeatureOfInterest"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#FeatureOfInterest">
-            <span>feature of interest</span>
-         </a>
-      </li>
-      <li>
-         <a href="#IoTDevice"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#IoTDevice">
-            <span>io t device</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Processor"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Processor">
-            <span>processor</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Property"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Property">
-            <span>property</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://elite.polito.it/ontologies/eupont.owl#Rule"
-            title="http://elite.polito.it/ontologies/eupont.owl#Rule">
-            <span>rule</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Sensor"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor">
-            <span>sensor</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Service"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Service">
-            <span>service</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Smokesensor"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Smokesensor">
-            <span>smokesensor</span>
-         </a>
-      </li>
-      <li>
-         <a href="#State"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#State">
-            <span>state</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Switch"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Switch">
-            <span>switch</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Temperaturesensor"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Temperaturesensor">
-            <span>temperaturesensor</span>
-         </a>
-      </li>
-      <li>
-         <a href="#Trigger"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger">
-            <span>trigger</span>
-         </a>
-      </li>
-      <li>
-         <a href="#triggerActionPlateform"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#triggerActionPlateform">
-            <span>trigger action plateform</span>
-         </a>
-      </li>
-   </ul>
-   <div class="entity" id="Action">
-      <h3>action<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action</p>
-      <div class="comment">
-         <span class="markdown">An action to perform by calling a service of an IoT device.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="http://elite.polito.it/ontologies/eupont.owl#Action"
-               target="_blank"
-               title="http://elite.polito.it/ontologies/eupont.owl#Action">action</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#allowsAction"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#allowsAction">allows action</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.data-knowledge.org/dk/flowsFrom" title="http://www.data-knowledge.org/dk/flowsFrom">flows from</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#flowsFrom"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsFrom">flows from</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.data-knowledge.org/dk/flowsTo" title="http://www.data-knowledge.org/dk/flowsTo">flows to</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#flowsTo"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsTo">flows to</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasAction"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasAction">has action</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Actuator">
-      <h3>actuator<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator</p>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/Actuator"
-               target="_blank"
-               title="https://saref.etsi.org/core/Actuator">actuator</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Device"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#IoTDevice"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#IoTDevice">io t device</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Switch"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Switch">switch</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#controlsProperty"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#controlsProperty">controls property</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Application">
-      <h3>application<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application</p>
-      <div class="comment">
-         <span class="markdown">An IoT application that compose IoT devices services to create added value/complex services, it can be a trigger-action plateform.</span>
-      </div>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Broker"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Broker">broker</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#triggerActionPlateform"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#triggerActionPlateform">trigger action plateform</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasApplicationAction"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasApplicationAction">has application action</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasRule"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasRule">has rule</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Broker">
-      <h3>broker<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Broker</p>
-      <div class="comment">
-         <span class="markdown">broker that connect equipments.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Application"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application">application</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ComplexTrigger">
-      <h3>complex trigger<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ComplexTrigger</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Trigger"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger">trigger</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasChildTrigger"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasChildTrigger">has child trigger</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ConnectivityDevice">
-      <h3>connectivity device<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityDevice</p>
-      <div class="comment">
-         <span class="markdown">A device that connectes home devices to the internet like: gateway, wifiRepeater, hub.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Device"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ConnectivityService">
-      <h3>connectivity service<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityService</p>
-      <div class="comment">
-         <span class="markdown">A service offred by a connectivityDevice.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/Service"
-               target="_blank"
-               title="https://saref.etsi.org/core/Service">service</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://www.data-knowledge.org/dk/DataFlow">
-      <h3>Data Flow<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.data-knowledge.org/dk/DataFlow</p>
-      <div class="comment">
-         <span class="markdown">Indicates the actual connection and data exchange between two actions in an Iot application</span>
-      </div>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#DataFlow"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#DataFlow">Data Flow</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#http://www.data-knowledge.org/dk/flowsFrom" title="http://www.data-knowledge.org/dk/flowsFrom">flows from</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.data-knowledge.org/dk/flowsTo" title="http://www.data-knowledge.org/dk/flowsTo">flows to</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="DataFlow">
-      <h3>Data Flow<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#DataFlow</p>
-      <div class="comment">
-         <span class="markdown">Indicates the actual connection and data exchange between actions in one application.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#http://www.data-knowledge.org/dk/DataFlow" title="http://www.data-knowledge.org/dk/DataFlow">Data Flow</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#flowsFrom"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsFrom">flows from</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#flowsTo"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsTo">flows to</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Device">
-      <h3>Device<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device</p>
-      <div class="comment">
-         <span class="markdown">A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/Device"
-               target="_blank"
-               title="https://saref.etsi.org/core/Device">device</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Actuator"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator">actuator</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ConnectivityDevice"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ConnectivityDevice">connectivity device</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#IoTDevice"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#IoTDevice">io t device</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Processor"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Processor">processor</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Sensor"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor">sensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasImplicitServiceDependencyTo"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo">has implicit service dependency to</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasState"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasState">has state</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#offers"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#offers">offers</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasImplicitServiceDependencyTo"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo">has implicit service dependency to</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="FeatureOfInterest">
-      <h3>feature of interest<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#FeatureOfInterest</p>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/FeatureOfInterest"
-               target="_blank"
-               title="https://saref.etsi.org/core/FeatureOfInterest">feature of interest</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasProperty"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasProperty">has property</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="IoTDevice">
-      <h3>io t device<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#IoTDevice</p>
-      <div class="comment">
-         <span class="markdown">A device that is connected to the internet to share data it can be ether a sensor/actuator/processor or compositition.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Device"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Actuator"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator">actuator</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Sensor"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor">sensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Processor">
-      <h3>processor<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Processor</p>
-      <div class="comment">
-         <span class="markdown">A device that has the capability to perform computation operations on data.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Device"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Property">
-      <h3>property<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Property</p>
-      <div class="comment">
-         <span class="markdown">A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/Property"
-               target="_blank"
-               title="https://saref.etsi.org/core/Property">property</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#controlsProperty"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#controlsProperty">controls property</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasProperty"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasProperty">has property</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#measuresProperty"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#measuresProperty">measures property</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://elite.polito.it/ontologies/eupont.owl#Rule">
-      <h3>rule<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://elite.polito.it/ontologies/eupont.owl#Rule</p>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Rule"
-               target="_blank"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Rule">rule</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasRule"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasRule">has rule</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Sensor">
-      <h3>sensor<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor</p>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/Sensor"
-               target="_blank"
-               title="https://saref.etsi.org/core/Sensor">sensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Device"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#IoTDevice"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#IoTDevice">io t device</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Smokesensor"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Smokesensor">smokesensor</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Temperaturesensor"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Temperaturesensor">temperaturesensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#measuresProperty"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#measuresProperty">measures property</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Service">
-      <h3>service<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Service</p>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/Service"
-               target="_blank"
-               title="https://saref.etsi.org/core/Service">service</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#allowsAction"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#allowsAction">allows action</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#offers"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#offers">offers</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Smokesensor">
-      <h3>smokesensor<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Smokesensor</p>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/SmokeSensor"
-               target="_blank"
-               title="https://saref.etsi.org/core/SmokeSensor">smoke sensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Sensor"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor">sensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="State">
-      <h3>state<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#State</p>
-      <div class="comment">
-         <span class="markdown">The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended.</span>
-      </div>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/State"
-               target="_blank"
-               title="https://saref.etsi.org/core/State">state</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasState"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasState">has state</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Switch">
-      <h3>switch<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Switch</p>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Actuator"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator">actuator</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Temperaturesensor">
-      <h3>temperaturesensor<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Temperaturesensor</p>
-      <dl class="description">
-         <dt>is equivalent to</dt>
-         <dd>
-            <a href="https://saref.etsi.org/core/TemperatureSensor"
-               target="_blank"
-               title="https://saref.etsi.org/core/TemperatureSensor">temperature sensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Sensor"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor">sensor</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Trigger">
-      <h3>trigger<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger</p>
-      <div class="comment">
-         <span class="markdown">An event to react to. It is launched when the state of an IoT device changes.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="http://elite.polito.it/ontologies/eupont.owl#Trigger"
-               target="_blank"
-               title="http://elite.polito.it/ontologies/eupont.owl#Trigger">trigger</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#ComplexTrigger"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ComplexTrigger">complex trigger</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#relatedTo"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#relatedTo">related to</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasChildTrigger"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasChildTrigger">has child trigger</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasTrigger"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasTrigger">has trigger</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="triggerActionPlateform">
-      <h3>trigger action plateform<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#triggerActionPlateform</p>
-      <div class="comment">
-         <span class="markdown">a kind of IoT application that is composed of rules created by end user.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Application"
-               title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application">application</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
-   <h3 id="properties" class="list">Object Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#allowsAction"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#allowsAction">
-            <span>allows action</span>
-         </a>
-      </li>
-      <li>
-         <a href="#consumes"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#consumes">
-            <span>consumes</span>
-         </a>
-      </li>
-      <li>
-         <a href="#controlsProperty"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#controlsProperty">
-            <span>controls property</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://www.data-knowledge.org/dk/flowsFrom" title="http://www.data-knowledge.org/dk/flowsFrom">flows from</a>
-      </li>
-      <li>
-         <a href="#flowsFrom"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsFrom">
-            <span>flows from</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://www.data-knowledge.org/dk/flowsTo" title="http://www.data-knowledge.org/dk/flowsTo">flows to</a>
-      </li>
-      <li>
-         <a href="#flowsTo"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsTo">
-            <span>flows to</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasAction"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasAction">
-            <span>has action</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasApplicationAction"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasApplicationAction">
-            <span>has application action</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasChildTrigger"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasChildTrigger">
-            <span>has child trigger</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasConnectivityDependency"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasConnectivityDependency">
-            <span>has connectivity dependency</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasEnvironmentDependencyTo"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo">
-            <span>has environment dependency to</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasImplicitServiceDependencyTo"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo">
-            <span>has implicit service dependency to</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasProperty"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasProperty">
-            <span>has property</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasRule"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasRule">
-            <span>has rule</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasServiceDependencyTo"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceDependencyTo">
-            <span>has service dependency to</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasState"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasState">
-            <span>has state</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasStateDependencyTo"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasStateDependencyTo">
-            <span>has state dependency to</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasTrigger"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasTrigger">
-            <span>has trigger</span>
-         </a>
-      </li>
-      <li>
-         <a href="#measuresProperty"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#measuresProperty">
-            <span>measures property</span>
-         </a>
-      </li>
-      <li>
-         <a href="#offers"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#offers">
-            <span>offers</span>
-         </a>
-      </li>
-      <li>
-         <a href="#relatedTo"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#relatedTo">
-            <span>related to</span>
-         </a>
-      </li>
-   </ul>
-   <div class="entity" id="allowsAction">
-      <h3>allows action<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#allowsAction</p>
-      <div class="comment">
-         <span class="markdown">A relationship between a service and an action, a service call allow action execution.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Service"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Service">service</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Action"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">action</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="consumes">
-      <h3>consumes<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#consumes</p>
-      <div class="comment">
-         <span class="markdown">A relationship between a device and a service.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Service"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Service">service</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="controlsProperty">
-      <h3>controls property<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#controlsProperty</p>
-      <div class="description">
-         <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/controlsProperty"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/controlsProperty">controls property</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Actuator"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Actuator">actuator</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Property"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Property">property</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="http://www.data-knowledge.org/dk/flowsFrom">
-      <h3>flows from<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.data-knowledge.org/dk/flowsFrom</p>
-      <div class="comment">
-         <span class="markdown">denotes that an action produce data </span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://www.data-knowledge.org/dk/">http://www.data-knowledge.org/dk/</a>
-         </dd>
-      </dl>
-       
-      <div class="description">
-         <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="#flowsFrom"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsFrom">flows from</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#http://www.data-knowledge.org/dk/DataFlow" title="http://www.data-knowledge.org/dk/DataFlow">Data Flow</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Action"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">action</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="flowsFrom">
-      <h3>flows from<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsFrom</p>
-      <div class="description">
-         <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="#http://www.data-knowledge.org/dk/flowsFrom" title="http://www.data-knowledge.org/dk/flowsFrom">flows from</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#DataFlow"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#DataFlow">Data Flow</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Action"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">action</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="http://www.data-knowledge.org/dk/flowsTo">
-      <h3>flows to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.data-knowledge.org/dk/flowsTo</p>
-      <div class="comment">
-         <span class="markdown">denotes that an Action recieve data</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="http://www.data-knowledge.org/dk/">http://www.data-knowledge.org/dk/</a>
-         </dd>
-      </dl>
-     
-      <div class="description">
-         <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="#flowsTo"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsTo">flows to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#http://www.data-knowledge.org/dk/DataFlow" title="http://www.data-knowledge.org/dk/DataFlow">Data Flow</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Action"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">action</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="flowsTo">
-      <h3>flows to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#flowsTo</p>
-      <div class="description">
-         <dl>
-            <dt>has equivalent properties</dt>
-            <dd>
-               <a href="#http://www.data-knowledge.org/dk/flowsTo" title="http://www.data-knowledge.org/dk/flowsTo">flows to</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#DataFlow"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#DataFlow">Data Flow</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Action"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">action</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasAction">
-      <h3>has action<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasAction</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Rule"
-                  target="_blank"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Rule">rule</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Action"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Action">action</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasApplicationAction">
-      <h3>has application action<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasApplicationAction</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Application"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application">application</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://elite.polito.it/ontologies/eupont.owl#Action"
-                  target="_blank"
-                  title="http://elite.polito.it/ontologies/eupont.owl#Action">action</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasChildTrigger">
-      <h3>has child trigger<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasChildTrigger</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ComplexTrigger"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#ComplexTrigger">complex trigger</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Trigger"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger">trigger</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasConnectivityDependency">
-      <h3>has connectivity dependency<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasConnectivityDependency</p>
-      <div class="comment">
-         <span class="markdown">Denotes connectivity dependency relationship between two devices.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasEnvironmentDependencyTo">
-      <h3>has environment dependency to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo</p>
-      <div class="comment">
-         <span class="markdown">Denotes environment dependency relationship between two devices.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasImplicitServiceDependencyTo">
-      <h3>has implicit service dependency to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo</p>
-      <div class="comment">
-         <span class="markdown">Denotes implicit service dependency between two IoT devices.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Device"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Device"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasProperty">
-      <h3>has property<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasProperty</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#FeatureOfInterest"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#FeatureOfInterest">feature of interest</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Property"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Property">property</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasRule">
-      <h3>has rule<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasRule</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Application"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Application">application</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#http://elite.polito.it/ontologies/eupont.owl#Rule"
-                  title="http://elite.polito.it/ontologies/eupont.owl#Rule">rule</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasServiceDependencyTo">
-      <h3>has service dependency to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceDependencyTo</p>
-      <div class="comment">
-         <span class="markdown">Denotes direct service dependency relationship between two devices.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasState">
-      <h3>has state<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasState</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Device"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#State"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#State">state</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasStateDependencyTo">
-      <h3>has state dependency to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasStateDependencyTo</p>
-      <div class="comment">
-         <span class="markdown">Denotes state dependency relationship between two devices.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasTrigger">
-      <h3>has trigger<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasTrigger</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Rule"
-                  target="_blank"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Rule">rule</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Trigger"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger">trigger</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="measuresProperty">
-      <h3>measures property<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#measuresProperty</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Sensor"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Sensor">sensor</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Property"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Property">property</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="offers">
-      <h3>offers<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#offers</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Device"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Device">Device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#Service"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Service">service</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="relatedTo">
-      <h3>related to<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#relatedTo</p>
-      <div class="comment">
-         <span class="markdown">A relationship between a trigger and state to experss that a trigger occurs at a defined state of the device.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Trigger"
-                  title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#Trigger">trigger</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/State"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/State">state</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
-   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#hasDeviceName"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceName">
-            <span>has device name</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasDeviceTypeName"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceTypeName">
-            <span>has device type name</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasIPAddress"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasIPAddress">
-            <span>has i p address</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasMacAddress"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasMacAddress">
-            <span>has mac address</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasManufacturerName"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasManufacturerName">
-            <span>has manufacturer name</span>
-         </a>
-      </li>
-      <li>
-         <a href="#hasServiceName"
-            title="http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceName">
-            <span>has service name</span>
-         </a>
-      </li>
-   </ul>
-   <div class="entity" id="hasDeviceName">
-      <h3>has device name<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceName</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasDeviceTypeName">
-      <h3>has device type name<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasDeviceTypeName</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasIPAddress">
-      <h3>has i p address<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasIPAddress</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasMacAddress">
-      <h3>has mac address<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasMacAddress</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
-                  target="_blank"
-                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasManufacturerName">
-      <h3>has manufacturer name<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasManufacturerName</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Device"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Device">device</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasServiceName">
-      <h3>has service name<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/OrangeLab/ontologies/2021/9/IoTD#hasServiceName</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="https://saref.etsi.org/core/Service"
-                  target="_blank"
-                  title="https://saref.etsi.org/core/Service">service</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-</div><div id="legend">
-<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<div   class="entity">
-<sup class="type-c" title="Classes">c</sup>: Classes <br/>
-<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
-<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
-</div>
-</div>
-</div>
-    
-
-<!--REFERENCES SECTION-->
-  <div id="references">
-<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-Add your references here. It is recommended to have them as a list.</span>
-
-</div>
-<div id="acknowledgments">
-<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>
-The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
-</div>
+###  http://purl.org/vocab/vann/example
+vann:example rdf:type owl:AnnotationProperty .
 
 
-</div>
-</body>
-</html>
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionIRI
+owl:versionIRI rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.data-knowledge.org/dk/flowsFrom
+<http://www.data-knowledge.org/dk/flowsFrom> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty :flowsFrom ;
+                                             rdfs:domain <http://www.data-knowledge.org/dk/DataFlow> ;
+                                             rdfs:range :Action ;
+                                             vann:example "Master data repository sends out dataset 324"@en ,
+                                                          "Stammdatenspeicher sendet Datensatz 324"@de ;
+                                             rdfs:comment "Interface A sends data"@en ,
+                                                          "Schnittstelle A sendet Daten"@de ;
+                                             rdfs:isDefinedBy <http://www.data-knowledge.org/dk/> ;
+                                             rdfs:label "fließt von"@de ,
+                                                        "flows from"@en .
+
+
+###  http://www.data-knowledge.org/dk/flowsTo
+<http://www.data-knowledge.org/dk/flowsTo> rdf:type owl:ObjectProperty ;
+                                           owl:equivalentProperty :flowsTo ;
+                                           rdfs:domain <http://www.data-knowledge.org/dk/DataFlow> ;
+                                           rdfs:range :Action ;
+                                           vann:example "Dataset 324 is sent to ERP system"@en ,
+                                                        "Datensatz 324 wird an ERP-System gesendet"@de ;
+                                           rdfs:comment "Data is sent to Interface B"@en ,
+                                                        "Daten werden zu Schnittstelle B gesendet"@de ;
+                                           rdfs:isDefinedBy <http://www.data-knowledge.org/dk/> ;
+                                           rdfs:label "fließt an"@de ,
+                                                      "flows to"@en .
+
+
+###  https://w3id.org/iotd#allowsAction
+:allowsAction rdf:type owl:ObjectProperty ;
+              rdfs:domain :Service ;
+              rdfs:range :Action ;
+              rdfs:comment "A relationship between a service and an action, a service call allow action execution." .
+
+
+###  https://w3id.org/iotd#consumes
+:consumes rdf:type owl:ObjectProperty ;
+          rdfs:domain <https://saref.etsi.org/core/Device> ;
+          rdfs:range <https://saref.etsi.org/core/Service> ;
+          rdfs:comment "A relationship between a device and a service." .
+
+
+###  https://w3id.org/iotd#controlsProperty
+:controlsProperty rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty <https://saref.etsi.org/core/controlsProperty> ;
+                  rdfs:domain :Actuator ;
+                  rdfs:range :Property .
+
+
+###  https://w3id.org/iotd#flowsFrom
+:flowsFrom rdf:type owl:ObjectProperty ;
+           rdfs:domain :DataFlow ;
+           rdfs:range :Action .
+
+
+###  https://w3id.org/iotd#flowsTo
+:flowsTo rdf:type owl:ObjectProperty ;
+         rdfs:domain :DataFlow ;
+         rdfs:range :Action .
+
+
+###  https://w3id.org/iotd#hasAction
+:hasAction rdf:type owl:ObjectProperty ;
+           rdfs:domain :Rule ;
+           rdfs:range :Action .
+
+
+###  https://w3id.org/iotd#hasApplicationAction
+:hasApplicationAction rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Application ;
+                      rdfs:range <http://elite.polito.it/ontologies/eupont.owl#Action> .
+
+
+###  https://w3id.org/iotd#hasChildTrigger
+:hasChildTrigger rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ComplexTrigger ;
+                 rdfs:range :Trigger .
+
+
+###  https://w3id.org/iotd#hasConnectivityDependency
+:hasConnectivityDependency rdf:type owl:ObjectProperty ;
+                           rdfs:domain <https://saref.etsi.org/core/Device> ;
+                           rdfs:range <https://saref.etsi.org/core/Device> ;
+                           rdfs:comment "Denotes connectivity dependency relationship between two devices." .
+
+
+###  https://w3id.org/iotd#hasEnvironmentDependencyTo
+:hasEnvironmentDependencyTo rdf:type owl:ObjectProperty ;
+                            rdfs:domain <https://saref.etsi.org/core/Device> ;
+                            rdfs:range <https://saref.etsi.org/core/Device> ;
+                            rdfs:comment "Denotes environment dependency relationship between two devices." .
+
+
+###  https://w3id.org/iotd#hasImplicitServiceDependencyTo
+:hasImplicitServiceDependencyTo rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Device ;
+                                rdfs:range :Device ;
+                                rdfs:comment "Denotes implicit service dependency between two IoT devices." .
+
+
+###  https://w3id.org/iotd#hasProperty
+:hasProperty rdf:type owl:ObjectProperty ;
+             owl:equivalentProperty <https://saref.etsi.org/core/hasProperty> ;
+             rdfs:domain :FeatureOfInterest ;
+             rdfs:range :Property .
+
+
+###  https://w3id.org/iotd#hasRule
+:hasRule rdf:type owl:ObjectProperty ;
+         rdfs:domain :Application ;
+         rdfs:range <http://elite.polito.it/ontologies/eupont.owl#Rule> .
+
+
+###  https://w3id.org/iotd#hasServiceDependencyTo
+:hasServiceDependencyTo rdf:type owl:ObjectProperty ;
+                        rdfs:domain <https://saref.etsi.org/core/Device> ;
+                        rdfs:range <https://saref.etsi.org/core/Device> ;
+                        rdfs:comment "Denotes direct service dependency relationship between two devices." .
+
+
+###  https://w3id.org/iotd#hasState
+:hasState rdf:type owl:ObjectProperty ;
+          owl:equivalentProperty <https://saref.etsi.org/core/hasState> ;
+          rdfs:domain :Device ;
+          rdfs:range :State .
+
+
+###  https://w3id.org/iotd#hasStateDependencyTo
+:hasStateDependencyTo rdf:type owl:ObjectProperty ;
+                      rdfs:domain <https://saref.etsi.org/core/Device> ;
+                      rdfs:range <https://saref.etsi.org/core/Device> ;
+                      rdfs:comment "Denotes state dependency relationship between two devices." .
+
+
+###  https://w3id.org/iotd#hasTrigger
+:hasTrigger rdf:type owl:ObjectProperty ;
+            rdfs:domain :Rule ;
+            rdfs:range :Trigger .
+
+
+###  https://w3id.org/iotd#measuresProperty
+:measuresProperty rdf:type owl:ObjectProperty ;
+                  owl:equivalentProperty <https://saref.etsi.org/core/measuresProperty> ;
+                  rdfs:domain :Sensor ;
+                  rdfs:range :Property .
+
+
+###  https://w3id.org/iotd#offers
+:offers rdf:type owl:ObjectProperty ;
+        owl:equivalentProperty <https://saref.etsi.org/core/offers> ;
+        rdfs:domain :Device ;
+        rdfs:range :Service .
+
+
+###  https://w3id.org/iotd#relatedTo
+:relatedTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :Trigger ;
+           rdfs:range <https://saref.etsi.org/core/State> ;
+           rdfs:comment "A relationship between a trigger and state to experss that a trigger occurs at a defined state of the device." .
+
+
+###  https://saref.etsi.org/core/controlsProperty
+<https://saref.etsi.org/core/controlsProperty> rdf:type owl:ObjectProperty .
+
+
+###  https://saref.etsi.org/core/hasProperty
+
+###  https://saref.etsi.org/core/hasState
+
+###  https://saref.etsi.org/core/measuresProperty
+
+###  https://saref.etsi.org/core/offers
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/iotd#hasDeviceName
+:hasDeviceName rdf:type owl:DatatypeProperty ;
+               rdfs:domain <https://saref.etsi.org/core/Device> .
+
+
+###  https://w3id.org/iotd#hasDeviceTypeName
+:hasDeviceTypeName rdf:type owl:DatatypeProperty ;
+                   rdfs:domain <https://saref.etsi.org/core/Device> .
+
+
+###  https://w3id.org/iotd#hasIPAddress
+:hasIPAddress rdf:type owl:DatatypeProperty ;
+              rdfs:domain <https://saref.etsi.org/core/Device> .
+
+
+###  https://w3id.org/iotd#hasMacAddress
+:hasMacAddress rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain <https://saref.etsi.org/core/Device> .
+
+
+###  https://w3id.org/iotd#hasManufacturerName
+:hasManufacturerName rdf:type owl:DatatypeProperty ;
+                     rdfs:domain <https://saref.etsi.org/core/Device> .
+
+
+###  https://w3id.org/iotd#hasServiceName
+:hasServiceName rdf:type owl:DatatypeProperty ;
+                rdfs:domain <https://saref.etsi.org/core/Service> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://elite.polito.it/ontologies/eupont.owl#Action
+<http://elite.polito.it/ontologies/eupont.owl#Action> rdf:type owl:Class .
+
+
+###  http://elite.polito.it/ontologies/eupont.owl#Rule
+<http://elite.polito.it/ontologies/eupont.owl#Rule> rdf:type owl:Class ;
+                                                    owl:equivalentClass :Rule .
+
+
+###  http://elite.polito.it/ontologies/eupont.owl#Trigger
+<http://elite.polito.it/ontologies/eupont.owl#Trigger> rdf:type owl:Class .
+
+
+###  http://www.data-knowledge.org/dk/DataFlow
+<http://www.data-knowledge.org/dk/DataFlow> rdf:type owl:Class ;
+                                            rdfs:comment "Indicates the actual connection and data exchange between particular applications"@en ;
+                                            rdfs:label "Data Flow"@en .
+
+
+###  https://w3id.org/iotd#Action
+:Action rdf:type owl:Class ;
+        rdfs:subClassOf <http://elite.polito.it/ontologies/eupont.owl#Action> ;
+        rdfs:comment "An action to perform by calling a service of an IoT device." .
+
+
+###  https://w3id.org/iotd#Actuator
+:Actuator rdf:type owl:Class ;
+          owl:equivalentClass <https://saref.etsi.org/core/Actuator> ;
+          rdfs:subClassOf :Device ,
+                          :IoTDevice .
+
+
+###  https://w3id.org/iotd#Application
+:Application rdf:type owl:Class ;
+             rdfs:comment "An IoT application that compose IoT devices services to create added value/complex services, it can be a trigger-action plateform." .
+
+
+###  https://w3id.org/iotd#Broker
+:Broker rdf:type owl:Class ;
+        rdfs:subClassOf :Application ;
+        rdfs:comment "broker that connect equipments." .
+
+
+###  https://w3id.org/iotd#ComplexTrigger
+:ComplexTrigger rdf:type owl:Class ;
+                rdfs:subClassOf :Trigger .
+
+
+###  https://w3id.org/iotd#ConnectivityDevice
+:ConnectivityDevice rdf:type owl:Class ;
+                    rdfs:subClassOf :Device ;
+                    rdfs:comment "A device that connectes home devices to the internet like: gateway, wifiRepeater, hub." .
+
+
+###  https://w3id.org/iotd#ConnectivityService
+:ConnectivityService rdf:type owl:Class ;
+                     rdfs:subClassOf <https://saref.etsi.org/core/Service> ;
+                     rdfs:comment "A service offred by a connectivityDevice." .
+
+
+###  https://w3id.org/iotd#DataFlow
+:DataFlow rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.data-knowledge.org/dk/DataFlow> ;
+          rdfs:comment "Indicates the actual connection and data exchange between actions in one application." ;
+          rdfs:label "Data Flow" .
+
+
+###  https://w3id.org/iotd#Device
+:Device rdf:type owl:Class ;
+        owl:equivalentClass <https://saref.etsi.org/core/Device> ;
+        rdfs:comment "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function." ;
+        rdfs:label "Device" .
+
+
+###  https://w3id.org/iotd#FeatureOfInterest
+:FeatureOfInterest rdf:type owl:Class ;
+                   owl:equivalentClass <https://saref.etsi.org/core/FeatureOfInterest> .
+
+
+###  https://w3id.org/iotd#IoTDevice
+:IoTDevice rdf:type owl:Class ;
+           rdfs:subClassOf :Device ;
+           rdfs:comment "A device that is connected to the internet to share data it can be ether a sensor/actuator/processor or compositition." .
+
+
+###  https://w3id.org/iotd#Processor
+:Processor rdf:type owl:Class ;
+           rdfs:subClassOf :Device ;
+           rdfs:comment "A device that has the capability to perform computation operations on data." .
+
+
+###  https://w3id.org/iotd#Property
+:Property rdf:type owl:Class ;
+          owl:equivalentClass <https://saref.etsi.org/core/Property> ;
+          rdfs:comment "A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature" .
+
+
+###  https://w3id.org/iotd#Rule
+:Rule rdf:type owl:Class .
+
+
+###  https://w3id.org/iotd#Sensor
+:Sensor rdf:type owl:Class ;
+        owl:equivalentClass <https://saref.etsi.org/core/Sensor> ;
+        rdfs:subClassOf :Device ,
+                        :IoTDevice .
+
+
+###  https://w3id.org/iotd#Service
+:Service rdf:type owl:Class ;
+         owl:equivalentClass <https://saref.etsi.org/core/Service> .
+
+
+###  https://w3id.org/iotd#Smokesensor
+:Smokesensor rdf:type owl:Class ;
+             owl:equivalentClass <https://saref.etsi.org/core/SmokeSensor> ;
+             rdfs:subClassOf :Sensor .
+
+
+###  https://w3id.org/iotd#State
+:State rdf:type owl:Class ;
+       owl:equivalentClass <https://saref.etsi.org/core/State> ;
+       rdfs:comment "The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended." .
+
+
+###  https://w3id.org/iotd#Switch
+:Switch rdf:type owl:Class ;
+        rdfs:subClassOf :Actuator .
+
+
+###  https://w3id.org/iotd#Temperaturesensor
+:Temperaturesensor rdf:type owl:Class ;
+                   owl:equivalentClass <https://saref.etsi.org/core/TemperatureSensor> ;
+                   rdfs:subClassOf :Sensor .
+
+
+###  https://w3id.org/iotd#Trigger
+:Trigger rdf:type owl:Class ;
+         rdfs:subClassOf <http://elite.polito.it/ontologies/eupont.owl#Trigger> ;
+         rdfs:comment "An event to react to. It is launched when the state of an IoT device changes." .
+
+
+###  https://w3id.org/iotd#triggerActionPlateform
+:triggerActionPlateform rdf:type owl:Class ;
+                        rdfs:subClassOf :Application ;
+                        rdfs:comment "a kind of IoT application that is composed of rules created by end user." .
+
+
+###  https://saref.etsi.org/core/Actuator
+<https://saref.etsi.org/core/Actuator> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/core/Device
+<https://saref.etsi.org/core/Device> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/core/FeatureOfInterest
+
+###  https://saref.etsi.org/core/Property
+<https://saref.etsi.org/core/Property> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/core/Sensor
+<https://saref.etsi.org/core/Sensor> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/core/Service
+<https://saref.etsi.org/core/Service> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/core/SmokeSensor
+
+###  https://saref.etsi.org/core/State
+<https://saref.etsi.org/core/State> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/core/TemperatureSensor
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
