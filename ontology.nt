@@ -1,11 +1,11 @@
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://www.w3.org/2002/07/owl#imports> <http://elite.polito.it/ontologies/eupont.owl#> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://www.w3.org/2002/07/owl#imports> <https://saref.etsi.org/core/> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://purl.org/dc/terms/description> "IoT-D reprensents IoT systems context data that allows inference of dependencies between IoT systems." .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://purl.org/dc/terms/title> "IoT dependencies ontology" .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD" .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://www.w3.org/2002/07/owl#versionIRI> "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD/0.0.4" .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.4" .
+<https://w3id.org/iotd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/iotd> <http://www.w3.org/2002/07/owl#imports> <http://elite.polito.it/ontologies/eupont.owl#> .
+<https://w3id.org/iotd> <http://www.w3.org/2002/07/owl#imports> <https://saref.etsi.org/core/> .
+<https://w3id.org/iotd> <http://purl.org/dc/terms/description> "IoT-D reprensents IoT systems context data that allows inference of dependencies between IoT systems." .
+<https://w3id.org/iotd> <http://purl.org/dc/terms/title> "IoT dependencies ontology" .
+<https://w3id.org/iotd> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/iotd" .
+<https://w3id.org/iotd> <http://www.w3.org/2002/07/owl#versionIRI> "https://w3id.org/iotd/0.0.4" .
+<https://w3id.org/iotd> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.4" .
 # 
 # 
 # #################################################################
@@ -41,9 +41,9 @@
 # 
 # http://www.data-knowledge.org/dk/flowsFrom
 <http://www.data-knowledge.org/dk/flowsFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.data-knowledge.org/dk/flowsFrom> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom> .
+<http://www.data-knowledge.org/dk/flowsFrom> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/iotd#flowsFrom> .
 <http://www.data-knowledge.org/dk/flowsFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.data-knowledge.org/dk/DataFlow> .
-<http://www.data-knowledge.org/dk/flowsFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> .
+<http://www.data-knowledge.org/dk/flowsFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Action> .
 <http://www.data-knowledge.org/dk/flowsFrom> <http://purl.org/vocab/vann/example> "Master data repository sends out dataset 324"@en .
 <http://www.data-knowledge.org/dk/flowsFrom> <http://purl.org/vocab/vann/example> "Stammdatenspeicher sendet Datensatz 324"@de .
 <http://www.data-knowledge.org/dk/flowsFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Interface A sends data"@en .
@@ -54,9 +54,9 @@
 # 
 # http://www.data-knowledge.org/dk/flowsTo
 <http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo> .
+<http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://w3id.org/iotd#flowsTo> .
 <http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.data-knowledge.org/dk/DataFlow> .
-<http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> .
+<http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Action> .
 <http://www.data-knowledge.org/dk/flowsTo> <http://purl.org/vocab/vann/example> "Dataset 324 is sent to ERP system"@en .
 <http://www.data-knowledge.org/dk/flowsTo> <http://purl.org/vocab/vann/example> "Datensatz 324 wird an ERP-System gesendet"@de .
 <http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Data is sent to Interface B"@en .
@@ -65,114 +65,114 @@
 <http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2000/01/rdf-schema#label> "fließt an"@de .
 <http://www.data-knowledge.org/dk/flowsTo> <http://www.w3.org/2000/01/rdf-schema#label> "flows to"@en .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a service and an action, a service call allow action execution." .
+# https://w3id.org/iotd#allowsAction
+<https://w3id.org/iotd#allowsAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#allowsAction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Service> .
+<https://w3id.org/iotd#allowsAction> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Action> .
+<https://w3id.org/iotd#allowsAction> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a service and an action, a service call allow action execution." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Service> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a device and a service." .
+# https://w3id.org/iotd#consumes
+<https://w3id.org/iotd#consumes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#consumes> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#consumes> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Service> .
+<https://w3id.org/iotd#consumes> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a device and a service." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://saref.etsi.org/core/controlsProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property> .
+# https://w3id.org/iotd#controlsProperty
+<https://w3id.org/iotd#controlsProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#controlsProperty> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://saref.etsi.org/core/controlsProperty> .
+<https://w3id.org/iotd#controlsProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Actuator> .
+<https://w3id.org/iotd#controlsProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Property> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> .
+# https://w3id.org/iotd#flowsFrom
+<https://w3id.org/iotd#flowsFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#flowsFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#DataFlow> .
+<https://w3id.org/iotd#flowsFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Action> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> .
+# https://w3id.org/iotd#flowsTo
+<https://w3id.org/iotd#flowsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#flowsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#DataFlow> .
+<https://w3id.org/iotd#flowsTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Action> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> .
+# https://w3id.org/iotd#hasAction
+<https://w3id.org/iotd#hasAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasAction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Rule> .
+<https://w3id.org/iotd#hasAction> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Action> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction> <http://www.w3.org/2000/01/rdf-schema#range> <http://elite.polito.it/ontologies/eupont.owl#Action> .
+# https://w3id.org/iotd#hasApplicationAction
+<https://w3id.org/iotd#hasApplicationAction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasApplicationAction> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Application> .
+<https://w3id.org/iotd#hasApplicationAction> <http://www.w3.org/2000/01/rdf-schema#range> <http://elite.polito.it/ontologies/eupont.owl#Action> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger> .
+# https://w3id.org/iotd#hasChildTrigger
+<https://w3id.org/iotd#hasChildTrigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasChildTrigger> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#ComplexTrigger> .
+<https://w3id.org/iotd#hasChildTrigger> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Trigger> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes connectivity dependency relationship between two devices." .
+# https://w3id.org/iotd#hasConnectivityDependency
+<https://w3id.org/iotd#hasConnectivityDependency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasConnectivityDependency> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasConnectivityDependency> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasConnectivityDependency> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes connectivity dependency relationship between two devices." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes environment dependency relationship between two devices." .
+# https://w3id.org/iotd#hasEnvironmentDependencyTo
+<https://w3id.org/iotd#hasEnvironmentDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasEnvironmentDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasEnvironmentDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasEnvironmentDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes environment dependency relationship between two devices." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes implicit service dependency between two IoT devices." .
+# https://w3id.org/iotd#hasImplicitServiceDependencyTo
+<https://w3id.org/iotd#hasImplicitServiceDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasImplicitServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#hasImplicitServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#hasImplicitServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes implicit service dependency between two IoT devices." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property> .
+# https://w3id.org/iotd#hasProperty
+<https://w3id.org/iotd#hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#FeatureOfInterest> .
+<https://w3id.org/iotd#hasProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Property> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule> <http://www.w3.org/2000/01/rdf-schema#range> <http://elite.polito.it/ontologies/eupont.owl#Rule> .
+# https://w3id.org/iotd#hasRule
+<https://w3id.org/iotd#hasRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasRule> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Application> .
+<https://w3id.org/iotd#hasRule> <http://www.w3.org/2000/01/rdf-schema#range> <http://elite.polito.it/ontologies/eupont.owl#Rule> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes direct service dependency relationship between two devices." .
+# https://w3id.org/iotd#hasServiceDependencyTo
+<https://w3id.org/iotd#hasServiceDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasServiceDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes direct service dependency relationship between two devices." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State> .
+# https://w3id.org/iotd#hasState
+<https://w3id.org/iotd#hasState> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasState> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#hasState> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#State> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes state dependency relationship between two devices." .
+# https://w3id.org/iotd#hasStateDependencyTo
+<https://w3id.org/iotd#hasStateDependencyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasStateDependencyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasStateDependencyTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#hasStateDependencyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes state dependency relationship between two devices." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger> .
+# https://w3id.org/iotd#hasTrigger
+<https://w3id.org/iotd#hasTrigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#hasTrigger> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Rule> .
+<https://w3id.org/iotd#hasTrigger> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Trigger> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property> .
+# https://w3id.org/iotd#measuresProperty
+<https://w3id.org/iotd#measuresProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#measuresProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Sensor> .
+<https://w3id.org/iotd#measuresProperty> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Property> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service> .
+# https://w3id.org/iotd#offers
+<https://w3id.org/iotd#offers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#offers> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#offers> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/iotd#Service> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/State> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a trigger and state to experss that a trigger occurs at a defined state of the device." .
+# https://w3id.org/iotd#relatedTo
+<https://w3id.org/iotd#relatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/iotd#relatedTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/iotd#Trigger> .
+<https://w3id.org/iotd#relatedTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/core/State> .
+<https://w3id.org/iotd#relatedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A relationship between a trigger and state to experss that a trigger occurs at a defined state of the device." .
 # 
 # https://saref.etsi.org/core/controlsProperty
 <https://saref.etsi.org/core/controlsProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -186,30 +186,30 @@
 # #################################################################
 # 
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceName
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+# https://w3id.org/iotd#hasDeviceName
+<https://w3id.org/iotd#hasDeviceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/iotd#hasDeviceName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceTypeName
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceTypeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceTypeName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+# https://w3id.org/iotd#hasDeviceTypeName
+<https://w3id.org/iotd#hasDeviceTypeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/iotd#hasDeviceTypeName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasIPAddress
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasIPAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasIPAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+# https://w3id.org/iotd#hasIPAddress
+<https://w3id.org/iotd#hasIPAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/iotd#hasIPAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+# https://w3id.org/iotd#hasMacAddress
+<https://w3id.org/iotd#hasMacAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/iotd#hasMacAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://w3id.org/iotd#hasMacAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasManufacturerName
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasManufacturerName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasManufacturerName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
+# https://w3id.org/iotd#hasManufacturerName
+<https://w3id.org/iotd#hasManufacturerName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/iotd#hasManufacturerName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Device> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceName
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Service> .
+# https://w3id.org/iotd#hasServiceName
+<https://w3id.org/iotd#hasServiceName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/iotd#hasServiceName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://saref.etsi.org/core/Service> .
 # 
 # 
 # 
@@ -225,7 +225,7 @@
 # 
 # http://elite.polito.it/ontologies/eupont.owl#Rule
 <http://elite.polito.it/ontologies/eupont.owl#Rule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://elite.polito.it/ontologies/eupont.owl#Rule> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule> .
+<http://elite.polito.it/ontologies/eupont.owl#Rule> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/iotd#Rule> .
 # 
 # http://elite.polito.it/ontologies/eupont.owl#Trigger
 <http://elite.polito.it/ontologies/eupont.owl#Trigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -235,115 +235,115 @@
 <http://www.data-knowledge.org/dk/DataFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the actual connection and data exchange between particular applications"@en .
 <http://www.data-knowledge.org/dk/DataFlow> <http://www.w3.org/2000/01/rdf-schema#label> "Data Flow"@en .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://elite.polito.it/ontologies/eupont.owl#Action> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action> <http://www.w3.org/2000/01/rdf-schema#comment> "An action to perform by calling a service of an IoT device." .
+# https://w3id.org/iotd#Action
+<https://w3id.org/iotd#Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Action> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://elite.polito.it/ontologies/eupont.owl#Action> .
+<https://w3id.org/iotd#Action> <http://www.w3.org/2000/01/rdf-schema#comment> "An action to perform by calling a service of an IoT device." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Actuator> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice> .
+# https://w3id.org/iotd#Actuator
+<https://w3id.org/iotd#Actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Actuator> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Actuator> .
+<https://w3id.org/iotd#Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#Actuator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#IoTDevice> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application> <http://www.w3.org/2000/01/rdf-schema#comment> "An IoT application that compose IoT devices services to create added value/complex services, it can be a trigger-action plateform." .
+# https://w3id.org/iotd#Application
+<https://w3id.org/iotd#Application> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Application> <http://www.w3.org/2000/01/rdf-schema#comment> "An IoT application that compose IoT devices services to create added value/complex services, it can be a trigger-action plateform." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker> <http://www.w3.org/2000/01/rdf-schema#comment> "broker that connect equipments." .
+# https://w3id.org/iotd#Broker
+<https://w3id.org/iotd#Broker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Broker> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Application> .
+<https://w3id.org/iotd#Broker> <http://www.w3.org/2000/01/rdf-schema#comment> "broker that connect equipments." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger> .
+# https://w3id.org/iotd#ComplexTrigger
+<https://w3id.org/iotd#ComplexTrigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#ComplexTrigger> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Trigger> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that connectes home devices to the internet like: gateway, wifiRepeater, hub." .
+# https://w3id.org/iotd#ConnectivityDevice
+<https://w3id.org/iotd#ConnectivityDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#ConnectivityDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#ConnectivityDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that connectes home devices to the internet like: gateway, wifiRepeater, hub." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Service> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService> <http://www.w3.org/2000/01/rdf-schema#comment> "A service offred by a connectivityDevice." .
+# https://w3id.org/iotd#ConnectivityService
+<https://w3id.org/iotd#ConnectivityService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#ConnectivityService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/Service> .
+<https://w3id.org/iotd#ConnectivityService> <http://www.w3.org/2000/01/rdf-schema#comment> "A service offred by a connectivityDevice." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.data-knowledge.org/dk/DataFlow> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the actual connection and data exchange between actions in one application." .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow> <http://www.w3.org/2000/01/rdf-schema#label> "Data Flow" .
+# https://w3id.org/iotd#DataFlow
+<https://w3id.org/iotd#DataFlow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#DataFlow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.data-knowledge.org/dk/DataFlow> .
+<https://w3id.org/iotd#DataFlow> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the actual connection and data exchange between actions in one application." .
+<https://w3id.org/iotd#DataFlow> <http://www.w3.org/2000/01/rdf-schema#label> "Data Flow" .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> <http://www.w3.org/2000/01/rdf-schema#comment> "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function." .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> <http://www.w3.org/2000/01/rdf-schema#label> "Device" .
+# https://w3id.org/iotd#Device
+<https://w3id.org/iotd#Device> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Device> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Device> .
+<https://w3id.org/iotd#Device> <http://www.w3.org/2000/01/rdf-schema#comment> "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function." .
+<https://w3id.org/iotd#Device> <http://www.w3.org/2000/01/rdf-schema#label> "Device" .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/FeatureOfInterest> .
+# https://w3id.org/iotd#FeatureOfInterest
+<https://w3id.org/iotd#FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#FeatureOfInterest> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/FeatureOfInterest> .
 <https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that is connected to the internet to share data it can be ether a sensor/actuator/processor or compositition." .
+# https://w3id.org/iotd#IoTDevice
+<https://w3id.org/iotd#IoTDevice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#IoTDevice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#IoTDevice> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that is connected to the internet to share data it can be ether a sensor/actuator/processor or compositition." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that has the capability to perform computation operations on data." .
+# https://w3id.org/iotd#Processor
+<https://w3id.org/iotd#Processor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Processor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#Processor> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that has the capability to perform computation operations on data." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Property> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature" .
+# https://w3id.org/iotd#Property
+<https://w3id.org/iotd#Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Property> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Property> .
+<https://w3id.org/iotd#Property> <http://www.w3.org/2000/01/rdf-schema#comment> "A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature" .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# https://w3id.org/iotd#Rule
+<https://w3id.org/iotd#Rule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Sensor> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice> .
+# https://w3id.org/iotd#Sensor
+<https://w3id.org/iotd#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Sensor> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Sensor> .
+<https://w3id.org/iotd#Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Device> .
+<https://w3id.org/iotd#Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#IoTDevice> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Service> .
+# https://w3id.org/iotd#Service
+<https://w3id.org/iotd#Service> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Service> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/Service> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/SmokeSensor> .
+# https://w3id.org/iotd#Smokesensor
+<https://w3id.org/iotd#Smokesensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Smokesensor> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/SmokeSensor> .
 <https://saref.etsi.org/core/SmokeSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor> .
+<https://w3id.org/iotd#Smokesensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Sensor> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/State> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State> <http://www.w3.org/2000/01/rdf-schema#comment> "The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended." .
+# https://w3id.org/iotd#State
+<https://w3id.org/iotd#State> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#State> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/State> .
+<https://w3id.org/iotd#State> <http://www.w3.org/2000/01/rdf-schema#comment> "The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Switch
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Switch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Switch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator> .
+# https://w3id.org/iotd#Switch
+<https://w3id.org/iotd#Switch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Switch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Actuator> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/TemperatureSensor> .
+# https://w3id.org/iotd#Temperaturesensor
+<https://w3id.org/iotd#Temperaturesensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Temperaturesensor> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/core/TemperatureSensor> .
 <https://saref.etsi.org/core/TemperatureSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor> .
+<https://w3id.org/iotd#Temperaturesensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Sensor> .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://elite.polito.it/ontologies/eupont.owl#Trigger> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger> <http://www.w3.org/2000/01/rdf-schema#comment> "An event to react to. It is launched when the state of an IoT device changes." .
+# https://w3id.org/iotd#Trigger
+<https://w3id.org/iotd#Trigger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#Trigger> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://elite.polito.it/ontologies/eupont.owl#Trigger> .
+<https://w3id.org/iotd#Trigger> <http://www.w3.org/2000/01/rdf-schema#comment> "An event to react to. It is launched when the state of an IoT device changes." .
 # 
-# http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application> .
-<http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform> <http://www.w3.org/2000/01/rdf-schema#comment> "a kind of IoT application that is composed of rules created by end user." .
+# https://w3id.org/iotd#triggerActionPlateform
+<https://w3id.org/iotd#triggerActionPlateform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/iotd#triggerActionPlateform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/iotd#Application> .
+<https://w3id.org/iotd#triggerActionPlateform> <http://www.w3.org/2000/01/rdf-schema#comment> "a kind of IoT application that is composed of rules created by end user." .
 # 
 # https://saref.etsi.org/core/Actuator
 <https://saref.etsi.org/core/Actuator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
