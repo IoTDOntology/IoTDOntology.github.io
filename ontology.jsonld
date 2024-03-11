@@ -5,7 +5,7 @@
   "@id" : "http://elite.polito.it/ontologies/eupont.owl#Rule",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule"
+    "@id" : "https://w3id.org/iotd#Rule"
   } ]
 }, {
   "@id" : "http://elite.polito.it/ontologies/eupont.owl#Trigger",
@@ -64,10 +64,10 @@
     "@value" : "flows from"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"
+    "@id" : "https://w3id.org/iotd#Action"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom"
+    "@id" : "https://w3id.org/iotd#flowsFrom"
   } ]
 }, {
   "@id" : "http://www.data-knowledge.org/dk/flowsTo",
@@ -100,13 +100,13 @@
     "@value" : "flows to"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"
+    "@id" : "https://w3id.org/iotd#Action"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo"
+    "@id" : "https://w3id.org/iotd#flowsTo"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD",
+  "@id" : "https://w3id.org/iotd",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/description" : [ {
     "@value" : "IoT-D reprensents IoT systems context data that allows inference of dependencies between IoT systems."
@@ -115,7 +115,7 @@
     "@value" : "IoT dependencies ontology"
   } ],
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD"
+    "@value" : "https://w3id.org/iotd"
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
     "@id" : "http://elite.polito.it/ontologies/eupont.owl#"
@@ -123,13 +123,13 @@
     "@id" : "https://saref.etsi.org/core/"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@value" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD/0.0.4"
+    "@value" : "https://w3id.org/iotd/0.0.4"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "0.0.4"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action",
+  "@id" : "https://w3id.org/iotd#Action",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An action to perform by calling a service of an IoT device."
@@ -138,48 +138,48 @@
     "@id" : "http://elite.polito.it/ontologies/eupont.owl#Action"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator",
+  "@id" : "https://w3id.org/iotd#Actuator",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   }, {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice"
+    "@id" : "https://w3id.org/iotd#IoTDevice"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://saref.etsi.org/core/Actuator"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application",
+  "@id" : "https://w3id.org/iotd#Application",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An IoT application that compose IoT devices services to create added value/complex services, it can be a trigger-action plateform."
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker",
+  "@id" : "https://w3id.org/iotd#Broker",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "broker that connect equipments."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"
+    "@id" : "https://w3id.org/iotd#Application"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger",
+  "@id" : "https://w3id.org/iotd#ComplexTrigger",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"
+    "@id" : "https://w3id.org/iotd#Trigger"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice",
+  "@id" : "https://w3id.org/iotd#ConnectivityDevice",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A device that connectes home devices to the internet like: gateway, wifiRepeater, hub."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService",
+  "@id" : "https://w3id.org/iotd#ConnectivityService",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A service offred by a connectivityDevice."
@@ -188,7 +188,7 @@
     "@id" : "https://saref.etsi.org/core/Service"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow",
+  "@id" : "https://w3id.org/iotd#DataFlow",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Indicates the actual connection and data exchange between actions in one application."
@@ -200,7 +200,7 @@
     "@id" : "http://www.data-knowledge.org/dk/DataFlow"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device",
+  "@id" : "https://w3id.org/iotd#Device",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function."
@@ -212,31 +212,31 @@
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest",
+  "@id" : "https://w3id.org/iotd#FeatureOfInterest",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice",
+  "@id" : "https://w3id.org/iotd#IoTDevice",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A device that is connected to the internet to share data it can be ether a sensor/actuator/processor or compositition."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor",
+  "@id" : "https://w3id.org/iotd#Processor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A device that has the capability to perform computation operations on data."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property",
+  "@id" : "https://w3id.org/iotd#Property",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature"
@@ -245,36 +245,36 @@
     "@id" : "https://saref.etsi.org/core/Property"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule",
+  "@id" : "https://w3id.org/iotd#Rule",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor",
+  "@id" : "https://w3id.org/iotd#Sensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   }, {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice"
+    "@id" : "https://w3id.org/iotd#IoTDevice"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://saref.etsi.org/core/Sensor"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service",
+  "@id" : "https://w3id.org/iotd#Service",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://saref.etsi.org/core/Service"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor",
+  "@id" : "https://w3id.org/iotd#Smokesensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor"
+    "@id" : "https://w3id.org/iotd#Sensor"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://saref.etsi.org/core/SmokeSensor"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State",
+  "@id" : "https://w3id.org/iotd#State",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended."
@@ -283,22 +283,22 @@
     "@id" : "https://saref.etsi.org/core/State"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Switch",
+  "@id" : "https://w3id.org/iotd#Switch",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator"
+    "@id" : "https://w3id.org/iotd#Actuator"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor",
+  "@id" : "https://w3id.org/iotd#Temperaturesensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor"
+    "@id" : "https://w3id.org/iotd#Sensor"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://saref.etsi.org/core/TemperatureSensor"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger",
+  "@id" : "https://w3id.org/iotd#Trigger",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An event to react to. It is launched when the state of an IoT device changes."
@@ -307,19 +307,19 @@
     "@id" : "http://elite.polito.it/ontologies/eupont.owl#Trigger"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction",
+  "@id" : "https://w3id.org/iotd#allowsAction",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A relationship between a service and an action, a service call allow action execution."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service"
+    "@id" : "https://w3id.org/iotd#Service"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"
+    "@id" : "https://w3id.org/iotd#Action"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes",
+  "@id" : "https://w3id.org/iotd#consumes",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A relationship between a device and a service."
@@ -331,64 +331,64 @@
     "@id" : "https://saref.etsi.org/core/Service"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty",
+  "@id" : "https://w3id.org/iotd#controlsProperty",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator"
+    "@id" : "https://w3id.org/iotd#Actuator"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property"
+    "@id" : "https://w3id.org/iotd#Property"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
     "@id" : "https://saref.etsi.org/core/controlsProperty"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom",
+  "@id" : "https://w3id.org/iotd#flowsFrom",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow"
+    "@id" : "https://w3id.org/iotd#DataFlow"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"
+    "@id" : "https://w3id.org/iotd#Action"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo",
+  "@id" : "https://w3id.org/iotd#flowsTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow"
+    "@id" : "https://w3id.org/iotd#DataFlow"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"
+    "@id" : "https://w3id.org/iotd#Action"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction",
+  "@id" : "https://w3id.org/iotd#hasAction",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule"
+    "@id" : "https://w3id.org/iotd#Rule"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"
+    "@id" : "https://w3id.org/iotd#Action"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction",
+  "@id" : "https://w3id.org/iotd#hasApplicationAction",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"
+    "@id" : "https://w3id.org/iotd#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://elite.polito.it/ontologies/eupont.owl#Action"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger",
+  "@id" : "https://w3id.org/iotd#hasChildTrigger",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger"
+    "@id" : "https://w3id.org/iotd#ComplexTrigger"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"
+    "@id" : "https://w3id.org/iotd#Trigger"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency",
+  "@id" : "https://w3id.org/iotd#hasConnectivityDependency",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Denotes connectivity dependency relationship between two devices."
@@ -400,19 +400,19 @@
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceName",
+  "@id" : "https://w3id.org/iotd#hasDeviceName",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceTypeName",
+  "@id" : "https://w3id.org/iotd#hasDeviceTypeName",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo",
+  "@id" : "https://w3id.org/iotd#hasEnvironmentDependencyTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Denotes environment dependency relationship between two devices."
@@ -424,25 +424,25 @@
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasIPAddress",
+  "@id" : "https://w3id.org/iotd#hasIPAddress",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo",
+  "@id" : "https://w3id.org/iotd#hasImplicitServiceDependencyTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Denotes implicit service dependency between two IoT devices."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress",
+  "@id" : "https://w3id.org/iotd#hasMacAddress",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://saref.etsi.org/core/Device"
@@ -451,31 +451,31 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasManufacturerName",
+  "@id" : "https://w3id.org/iotd#hasManufacturerName",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty",
+  "@id" : "https://w3id.org/iotd#hasProperty",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest"
+    "@id" : "https://w3id.org/iotd#FeatureOfInterest"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property"
+    "@id" : "https://w3id.org/iotd#Property"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule",
+  "@id" : "https://w3id.org/iotd#hasRule",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"
+    "@id" : "https://w3id.org/iotd#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://elite.polito.it/ontologies/eupont.owl#Rule"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo",
+  "@id" : "https://w3id.org/iotd#hasServiceDependencyTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Denotes direct service dependency relationship between two devices."
@@ -487,22 +487,22 @@
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceName",
+  "@id" : "https://w3id.org/iotd#hasServiceName",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://saref.etsi.org/core/Service"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState",
+  "@id" : "https://w3id.org/iotd#hasState",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State"
+    "@id" : "https://w3id.org/iotd#State"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo",
+  "@id" : "https://w3id.org/iotd#hasStateDependencyTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Denotes state dependency relationship between two devices."
@@ -514,52 +514,52 @@
     "@id" : "https://saref.etsi.org/core/Device"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger",
+  "@id" : "https://w3id.org/iotd#hasTrigger",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule"
+    "@id" : "https://w3id.org/iotd#Rule"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"
+    "@id" : "https://w3id.org/iotd#Trigger"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty",
+  "@id" : "https://w3id.org/iotd#measuresProperty",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor"
+    "@id" : "https://w3id.org/iotd#Sensor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property"
+    "@id" : "https://w3id.org/iotd#Property"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers",
+  "@id" : "https://w3id.org/iotd#offers",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"
+    "@id" : "https://w3id.org/iotd#Device"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service"
+    "@id" : "https://w3id.org/iotd#Service"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo",
+  "@id" : "https://w3id.org/iotd#relatedTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A relationship between a trigger and state to experss that a trigger occurs at a defined state of the device."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"
+    "@id" : "https://w3id.org/iotd#Trigger"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://saref.etsi.org/core/State"
   } ]
 }, {
-  "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform",
+  "@id" : "https://w3id.org/iotd#triggerActionPlateform",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "a kind of IoT application that is composed of rules created by end user."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"
+    "@id" : "https://w3id.org/iotd#Application"
   } ]
 }, {
   "@id" : "http://www.w3.org/2002/07/owl#versionIRI",
