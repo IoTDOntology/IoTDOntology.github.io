@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#"
-     xml:base="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD"
+<rdf:RDF xmlns="https://w3id.org/iotd#"
+     xml:base="https://w3id.org/iotd"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -8,13 +8,13 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD">
+    <owl:Ontology rdf:about="https://w3id.org/iotd">
         <owl:imports rdf:resource="http://elite.polito.it/ontologies/eupont.owl#"/>
         <owl:imports rdf:resource="https://saref.etsi.org/core/"/>
         <terms:description>IoT-D reprensents IoT systems context data that allows inference of dependencies between IoT systems.</terms:description>
         <terms:title>IoT dependencies ontology</terms:title>
-        <vann:preferredNamespaceUri>http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD</vann:preferredNamespaceUri>
-        <owl:versionIRI>http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD/0.0.4</owl:versionIRI>
+        <vann:preferredNamespaceUri>https://w3id.org/iotd</vann:preferredNamespaceUri>
+        <owl:versionIRI>https://w3id.org/iotd/0.0.4</owl:versionIRI>
         <owl:versionInfo>0.0.4</owl:versionInfo>
     </owl:Ontology>
     
@@ -83,9 +83,9 @@
 
 
     <owl:ObjectProperty rdf:about="http://www.data-knowledge.org/dk/flowsFrom">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom"/>
+        <owl:equivalentProperty rdf:resource="https://w3id.org/iotd#flowsFrom"/>
         <rdfs:domain rdf:resource="http://www.data-knowledge.org/dk/DataFlow"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Action"/>
         <vann:example xml:lang="en">Master data repository sends out dataset 324</vann:example>
         <vann:example xml:lang="de">Stammdatenspeicher sendet Datensatz 324</vann:example>
         <rdfs:comment xml:lang="en">Interface A sends data</rdfs:comment>
@@ -101,9 +101,9 @@
 
 
     <owl:ObjectProperty rdf:about="http://www.data-knowledge.org/dk/flowsTo">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo"/>
+        <owl:equivalentProperty rdf:resource="https://w3id.org/iotd#flowsTo"/>
         <rdfs:domain rdf:resource="http://www.data-knowledge.org/dk/DataFlow"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Action"/>
         <vann:example xml:lang="en">Dataset 324 is sent to ERP system</vann:example>
         <vann:example xml:lang="de">Datensatz 324 wird an ERP-System gesendet</vann:example>
         <rdfs:comment xml:lang="en">Data is sent to Interface B</rdfs:comment>
@@ -115,21 +115,21 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction -->
+    <!-- https://w3id.org/iotd#allowsAction -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#allowsAction">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#allowsAction">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Service"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Action"/>
         <rdfs:comment>A relationship between a service and an action, a service call allow action execution.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes -->
+    <!-- https://w3id.org/iotd#consumes -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#consumes">
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#consumes">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:range rdf:resource="https://saref.etsi.org/core/Service"/>
         <rdfs:comment>A relationship between a device and a service.</rdfs:comment>
@@ -137,71 +137,71 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty -->
+    <!-- https://w3id.org/iotd#controlsProperty -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#controlsProperty">
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#controlsProperty">
         <owl:equivalentProperty rdf:resource="https://saref.etsi.org/core/controlsProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property"/>
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Actuator"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Property"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom -->
+    <!-- https://w3id.org/iotd#flowsFrom -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsFrom">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#flowsFrom">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#DataFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Action"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo -->
+    <!-- https://w3id.org/iotd#flowsTo -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#flowsTo">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#flowsTo">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#DataFlow"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Action"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction -->
+    <!-- https://w3id.org/iotd#hasAction -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasAction">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasAction">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Rule"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Action"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction -->
+    <!-- https://w3id.org/iotd#hasApplicationAction -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasApplicationAction">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasApplicationAction">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Application"/>
         <rdfs:range rdf:resource="http://elite.polito.it/ontologies/eupont.owl#Action"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger -->
+    <!-- https://w3id.org/iotd#hasChildTrigger -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasChildTrigger">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasChildTrigger">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#ComplexTrigger"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Trigger"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency -->
+    <!-- https://w3id.org/iotd#hasConnectivityDependency -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasConnectivityDependency">
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasConnectivityDependency">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:range rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:comment>Denotes connectivity dependency relationship between two devices.</rdfs:comment>
@@ -209,10 +209,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo -->
+    <!-- https://w3id.org/iotd#hasEnvironmentDependencyTo -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasEnvironmentDependencyTo">
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasEnvironmentDependencyTo">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:range rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:comment>Denotes environment dependency relationship between two devices.</rdfs:comment>
@@ -220,41 +220,41 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo -->
+    <!-- https://w3id.org/iotd#hasImplicitServiceDependencyTo -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasImplicitServiceDependencyTo">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasImplicitServiceDependencyTo">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Device"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Device"/>
         <rdfs:comment>Denotes implicit service dependency between two IoT devices.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty -->
+    <!-- https://w3id.org/iotd#hasProperty -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasProperty">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#FeatureOfInterest"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Property"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule -->
+    <!-- https://w3id.org/iotd#hasRule -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasRule">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasRule">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Application"/>
         <rdfs:range rdf:resource="http://elite.polito.it/ontologies/eupont.owl#Rule"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo -->
+    <!-- https://w3id.org/iotd#hasServiceDependencyTo -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceDependencyTo">
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasServiceDependencyTo">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:range rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:comment>Denotes direct service dependency relationship between two devices.</rdfs:comment>
@@ -262,20 +262,20 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState -->
+    <!-- https://w3id.org/iotd#hasState -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasState">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasState">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Device"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#State"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo -->
+    <!-- https://w3id.org/iotd#hasStateDependencyTo -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasStateDependencyTo">
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasStateDependencyTo">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:range rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:comment>Denotes state dependency relationship between two devices.</rdfs:comment>
@@ -283,41 +283,41 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger -->
+    <!-- https://w3id.org/iotd#hasTrigger -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasTrigger">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#hasTrigger">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Rule"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Trigger"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty -->
+    <!-- https://w3id.org/iotd#measuresProperty -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#measuresProperty">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#measuresProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Sensor"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Property"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers -->
+    <!-- https://w3id.org/iotd#offers -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#offers">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#offers">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Device"/>
+        <rdfs:range rdf:resource="https://w3id.org/iotd#Service"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo -->
+    <!-- https://w3id.org/iotd#relatedTo -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#relatedTo">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/iotd#relatedTo">
+        <rdfs:domain rdf:resource="https://w3id.org/iotd#Trigger"/>
         <rdfs:range rdf:resource="https://saref.etsi.org/core/State"/>
         <rdfs:comment>A relationship between a trigger and state to experss that a trigger occurs at a defined state of the device.</rdfs:comment>
     </owl:ObjectProperty>
@@ -343,56 +343,56 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceName -->
+    <!-- https://w3id.org/iotd#hasDeviceName -->
 
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/iotd#hasDeviceName">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceTypeName -->
+    <!-- https://w3id.org/iotd#hasDeviceTypeName -->
 
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasDeviceTypeName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/iotd#hasDeviceTypeName">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasIPAddress -->
+    <!-- https://w3id.org/iotd#hasIPAddress -->
 
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasIPAddress">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/iotd#hasIPAddress">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress -->
+    <!-- https://w3id.org/iotd#hasMacAddress -->
 
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasMacAddress">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/iotd#hasMacAddress">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasManufacturerName -->
+    <!-- https://w3id.org/iotd#hasManufacturerName -->
 
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasManufacturerName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/iotd#hasManufacturerName">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Device"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceName -->
+    <!-- https://w3id.org/iotd#hasServiceName -->
 
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#hasServiceName">
+    <owl:DatatypeProperty rdf:about="https://w3id.org/iotd#hasServiceName">
         <rdfs:domain rdf:resource="https://saref.etsi.org/core/Service"/>
     </owl:DatatypeProperty>
     
@@ -421,7 +421,7 @@
 
 
     <owl:Class rdf:about="http://elite.polito.it/ontologies/eupont.owl#Rule">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule"/>
+        <owl:equivalentClass rdf:resource="https://w3id.org/iotd#Rule"/>
     </owl:Class>
     
 
@@ -443,79 +443,79 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action -->
+    <!-- https://w3id.org/iotd#Action -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Action">
+    <owl:Class rdf:about="https://w3id.org/iotd#Action">
         <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/eupont.owl#Action"/>
         <rdfs:comment>An action to perform by calling a service of an IoT device.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator -->
+    <!-- https://w3id.org/iotd#Actuator -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator">
+    <owl:Class rdf:about="https://w3id.org/iotd#Actuator">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/Actuator"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Device"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#IoTDevice"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application -->
+    <!-- https://w3id.org/iotd#Application -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application">
+    <owl:Class rdf:about="https://w3id.org/iotd#Application">
         <rdfs:comment>An IoT application that compose IoT devices services to create added value/complex services, it can be a trigger-action plateform.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker -->
+    <!-- https://w3id.org/iotd#Broker -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Broker">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#Broker">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Application"/>
         <rdfs:comment>broker that connect equipments.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger -->
+    <!-- https://w3id.org/iotd#ComplexTrigger -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ComplexTrigger">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#ComplexTrigger">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Trigger"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice -->
+    <!-- https://w3id.org/iotd#ConnectivityDevice -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityDevice">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#ConnectivityDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Device"/>
         <rdfs:comment>A device that connectes home devices to the internet like: gateway, wifiRepeater, hub.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService -->
+    <!-- https://w3id.org/iotd#ConnectivityService -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#ConnectivityService">
+    <owl:Class rdf:about="https://w3id.org/iotd#ConnectivityService">
         <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Service"/>
         <rdfs:comment>A service offred by a connectivityDevice.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow -->
+    <!-- https://w3id.org/iotd#DataFlow -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#DataFlow">
+    <owl:Class rdf:about="https://w3id.org/iotd#DataFlow">
         <rdfs:subClassOf rdf:resource="http://www.data-knowledge.org/dk/DataFlow"/>
         <rdfs:comment>Indicates the actual connection and data exchange between actions in one application.</rdfs:comment>
         <rdfs:label>Data Flow</rdfs:label>
@@ -523,10 +523,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device -->
+    <!-- https://w3id.org/iotd#Device -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device">
+    <owl:Class rdf:about="https://w3id.org/iotd#Device">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/Device"/>
         <rdfs:comment>A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function.</rdfs:comment>
         <rdfs:label>Device</rdfs:label>
@@ -534,126 +534,126 @@
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest -->
+    <!-- https://w3id.org/iotd#FeatureOfInterest -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#FeatureOfInterest">
+    <owl:Class rdf:about="https://w3id.org/iotd#FeatureOfInterest">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice -->
+    <!-- https://w3id.org/iotd#IoTDevice -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#IoTDevice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Device"/>
         <rdfs:comment>A device that is connected to the internet to share data it can be ether a sensor/actuator/processor or compositition.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor -->
+    <!-- https://w3id.org/iotd#Processor -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Processor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#Processor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Device"/>
         <rdfs:comment>A device that has the capability to perform computation operations on data.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property -->
+    <!-- https://w3id.org/iotd#Property -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Property">
+    <owl:Class rdf:about="https://w3id.org/iotd#Property">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/Property"/>
         <rdfs:comment>A quality of a feature of interest that can be measured; an aspect of a feature of interest that is intrinsic to and cannot exist without the feature</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule -->
+    <!-- https://w3id.org/iotd#Rule -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Rule"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#Rule"/>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor -->
+    <!-- https://w3id.org/iotd#Sensor -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor">
+    <owl:Class rdf:about="https://w3id.org/iotd#Sensor">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/Sensor"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Device"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#IoTDevice"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Device"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#IoTDevice"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service -->
+    <!-- https://w3id.org/iotd#Service -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Service">
+    <owl:Class rdf:about="https://w3id.org/iotd#Service">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/Service"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor -->
+    <!-- https://w3id.org/iotd#Smokesensor -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Smokesensor">
+    <owl:Class rdf:about="https://w3id.org/iotd#Smokesensor">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/SmokeSensor"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State -->
+    <!-- https://w3id.org/iotd#State -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#State">
+    <owl:Class rdf:about="https://w3id.org/iotd#State">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/State"/>
         <rdfs:comment>The state in which a device can be found, e.g, ON/OFF/STANDBY, or ONLINE/OFFLINE. We propose here a list of states that are relevant for the purpose of SAREF, but this list can be extended.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Switch -->
+    <!-- https://w3id.org/iotd#Switch -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Switch">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Actuator"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#Switch">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Actuator"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor -->
+    <!-- https://w3id.org/iotd#Temperaturesensor -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Temperaturesensor">
+    <owl:Class rdf:about="https://w3id.org/iotd#Temperaturesensor">
         <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/TemperatureSensor"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Sensor"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Sensor"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger -->
+    <!-- https://w3id.org/iotd#Trigger -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Trigger">
+    <owl:Class rdf:about="https://w3id.org/iotd#Trigger">
         <rdfs:subClassOf rdf:resource="http://elite.polito.it/ontologies/eupont.owl#Trigger"/>
         <rdfs:comment>An event to react to. It is launched when the state of an IoT device changes.</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform -->
+    <!-- https://w3id.org/iotd#triggerActionPlateform -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#triggerActionPlateform">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Lab/ontologies/2021/9/IoTD#Application"/>
+    <owl:Class rdf:about="https://w3id.org/iotd#triggerActionPlateform">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/iotd#Application"/>
         <rdfs:comment>a kind of IoT application that is composed of rules created by end user.</rdfs:comment>
     </owl:Class>
     
